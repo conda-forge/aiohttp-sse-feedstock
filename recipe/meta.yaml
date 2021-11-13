@@ -1,5 +1,5 @@
 {% set name = "aiohttp-sse" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 547e1eaa129749f090d02b31956215edbcde74ce99721f5f0ac902a9ccb1202e
+  sha256: dfe8f7271ab4470891fa1bfa1913d6889b3d19015dd3d3a4cab949e66971bbca
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,7 +31,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Server-sent events support for aiohttp'
+  summary: Server-sent events support for aiohttp
   description: |
     Server-sent events support for aiohttp
   doc_url: https://aioconsole.readthedocs.io/
