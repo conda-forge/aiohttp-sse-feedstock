@@ -1,5 +1,5 @@
 {% set name = "aiohttp-sse" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dfe8f7271ab4470891fa1bfa1913d6889b3d19015dd3d3a4cab949e66971bbca
+  sha256: a48dd5774031d3f41a29e159ebdbb93e89c8f37c1e9e83e196296be51885a5c2
 
 build:
   noarch: python
