@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: aiohttp-sse
+  version: "2.2.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: a48dd5774031d3f41a29e159ebdbb93e89c8f37c1e9e83e196296be51885a5c2
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - aiohttp >=3.0
+
+tests:
+  - python:
+      imports:
+        - aiohttp_sse
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Server-sent events support for aiohttp
+  description: |
+    Server-sent events support for aiohttp
+  homepage: https://github.com/aio-libs/aiohttp-sse
+  repository: https://github.com/aio-libs/aiohttp-sse
+  documentation: https://aioconsole.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - timkpaine
